@@ -3,8 +3,9 @@ const cors = require("cors");
 const app = express();
 const connectDb = require("./config/connectToMongoDB");
 const BlogRoute = require("./routes/blog");
+require("dotenv").config();
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 connectDb();
 
 app.use(express.json());
