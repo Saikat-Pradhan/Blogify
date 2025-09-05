@@ -8,12 +8,12 @@ import AddBlog from './pages/AddBlog'
 
 
 const getAllBlogs = async () => {
-  const res = await axios.get("https://mern-sample-app-1.onrender.com");
+  const res = await axios.get("http://localhost:3000");
   return res.data;
 };
 
 const getBlog = async ({ params }) => {
-  const res = await axios.get(`https://mern-sample-app-1.onrender.com/${params.id}`);
+  const res = await axios.get(`http://localhost:3000/${params.id}`);
   return res.data;
 };
 

@@ -13,7 +13,7 @@ const AddBlog = () => {
   const onHandleSubmit = async (e) => {
     e.preventDefault()
     console.log(blogData)
-    await axios.post("https://mern-sample-app-1.onrender.com", blogData, {
+    await axios.post("http://localhost:3000", blogData, {
     }).then(() => navigate("/"))
   }
 
