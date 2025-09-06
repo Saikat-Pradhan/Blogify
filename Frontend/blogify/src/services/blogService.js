@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const Backend_URL = "https://mern-sample-app-1.onrender.com";
+const Backend_URL = "http://localhost:3000";
 
 export const getAllBlogs = async () => {
   try {
