@@ -1,6 +1,6 @@
-import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { createNewBlog } from '../services/blogService'
 
 const AddBlog = () => {
 
@@ -13,8 +13,7 @@ const AddBlog = () => {
   const onHandleSubmit = async (e) => {
     e.preventDefault()
     console.log(blogData)
-    await axios.post("http://localhost:3000", blogData, {
-    }).then(() => navigate("/"))
+    await createNewBlog(blogData).then(() => navigate("/"))
   }
 
   return (

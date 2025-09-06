@@ -2,20 +2,9 @@ import './App.css'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import HomePage from './pages/Home'
 import MainNavigation from './components/MainNavigation'
-import axios from 'axios'
 import BlogDetails from './pages/BlogDetails'
 import AddBlog from './pages/AddBlog'
-
-
-const getAllBlogs = async () => {
-  const res = await axios.get("http://localhost:3000");
-  return res.data;
-};
-
-const getBlog = async ({ params }) => {
-  const res = await axios.get(`http://localhost:3000/${params.id}`);
-  return res.data;
-};
+import { getAllBlogs, getBlog } from './services/blogService';
 
 const router=createBrowserRouter([
   {path:"/",element:<MainNavigation/>,children:[
