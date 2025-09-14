@@ -16,6 +16,18 @@ export default function BlogDetails() {
     return () => clearTimeout(timer);
   }, [loaderBlog]);
 
+  useEffect(() => {
+    if (!blog) return;
+
+    const speechSynth = window.speechSynthesis;
+    const welcomeMessage = `Welcome to the blog ${blog.title}`;
+
+    if (!speechSynth.speaking) {
+      const utterance = new SpeechSynthesisUtterance(welcomeMessage);
+      speechSynth.speak(utterance);
+    }
+  }, [blog]);
+
   if (loading || !blog) {
     return <Loading />;
   }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createNewBlog } from '../services/blogService'
 
@@ -6,6 +6,17 @@ const AddBlog = () => {
 
   const [blogData, setBlogData] = useState({})
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const speechSynth = window.speechSynthesis;
+    const welcomeMessage = "Add a new blog";
+
+    if (!speechSynth.speaking) {
+      const utterance = new SpeechSynthesisUtterance(welcomeMessage);
+      speechSynth.speak(utterance);
+    }
+  }, []);
+
   const onHandleChange = (e) => {
     let val = e.target.value;
     setBlogData(pre => ({ ...pre, [e.target.name]: val }))
