@@ -1,6 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { useState, useEffect } from 'react';
+import { speaker } from "../services/blogService";
 
 export default function BlogDetails() {
   const loaderBlog = useLoaderData();
@@ -19,13 +20,8 @@ export default function BlogDetails() {
   useEffect(() => {
     if (!blog) return;
 
-    const speechSynth = window.speechSynthesis;
     const welcomeMessage = `Welcome to the blog ${blog.title}`;
-
-    if (!speechSynth.speaking) {
-      const utterance = new SpeechSynthesisUtterance(welcomeMessage);
-      speechSynth.speak(utterance);
-    }
+    speaker(welcomeMessage);
   }, [blog]);
 
   if (loading || !blog) {

@@ -1,15 +1,11 @@
 import { useEffect } from "react";
 import BlogItems from "../components/BlogItems";
+import { speaker } from "../services/blogService";
 
 const HomePage = () => {
   useEffect(() => {
-    const speechSynth = window.speechSynthesis;
     const welcomeMessage = "Welcome to Home Page. Double Click to the blog you want to view.";
-
-    if (!speechSynth.speaking) {
-      const utterance = new SpeechSynthesisUtterance(welcomeMessage);
-      speechSynth.speak(utterance);
-    }
+    speaker(welcomeMessage);
   }, []);
 
   return (

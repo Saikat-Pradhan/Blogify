@@ -29,3 +29,12 @@ export const createNewBlog = async (blogData) => {
     throw error;
   }
 };
+
+export const speaker = (welcomeMessage) => {
+    const speechSynth = window.speechSynthesis;
+
+    if (!speechSynth.speaking) {
+      const utterance = new SpeechSynthesisUtterance(welcomeMessage);
+      speechSynth.speak(utterance);
+    }
+};
