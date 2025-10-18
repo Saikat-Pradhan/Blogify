@@ -28,7 +28,7 @@ export default function BlogItems() {
         <div
           key={item._id}
           className="border rounded-lg p-4 max-w-sm w-full hover:bg-neutral-900 hover:border-[3px] hover:border-blue-300 cursor-pointer"
-          onDoubleClick={() => navigate(`/blog/${item._id}`)}
+          onClick={() => navigate(`/blog/${item._id}`)}
         >
           <div>
             <h2 className="text-2xl text-center font-semibold text-blue-400">{item.title}</h2>

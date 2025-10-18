@@ -5,6 +5,7 @@ import { createNewBlog, speaker } from '../services/blogService'
 const AddBlog = () => {
 
   const [blogData, setBlogData] = useState({})
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -18,8 +19,14 @@ const AddBlog = () => {
   }
   const onHandleSubmit = async (e) => {
     e.preventDefault()
-    console.log(blogData)
-    await createNewBlog(blogData).then(() => navigate("/"))
+    setLoading(true)
+    try {
+      await createNewBlog(blogData).then(() => navigate("/"))
+    } catch (error) {
+      console.log("Failed to create new blog")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -39,7 +46,9 @@ const AddBlog = () => {
             <input type="text" className='bg-yellow-200 rounded-[8px] text-black' name="author" onChange={onHandleChange}></input>
           </div>
           <div className='flex justify-center mt-[0.5cm]'>
-            <button type="submit">Add Recipe</button>
+            <button type="submit" disabled={loading}>
+              {loading ? "Creating..." : "Create"}
+            </button>
           </div>
         </form>
       </div>
