@@ -4,7 +4,7 @@ import { speaker } from "../services/blogService";
 
 const HomePage = () => {
   useEffect(() => {
-    const welcomeMessage = "Welcome to Home Page. Double Click to the blog you want to view.";
+    const welcomeMessage = "Welcome to Home Page. Click on the blog you want to view.";
     speaker(welcomeMessage);
   }, []);
 

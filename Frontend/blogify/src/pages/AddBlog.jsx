@@ -31,26 +31,28 @@ const AddBlog = () => {
 
   return (
     <>
-      <div className='h-screen flex justify-center'>
-        <form className='border h-fit p-4 mt-[2cm]' onSubmit={onHandleSubmit}>
-          <div className='text-2xl'>
-            <label>Title: </label>
-            <input type="text" className='bg-yellow-200 rounded-[8px] text-black w-[8cm]' name="title" onChange={onHandleChange}></input>
-          </div>
-          <div className='text-2xl  mt-[7px]'>
-            <h3>Body: </h3>
-            <textarea type="text" className='bg-yellow-200 rounded-[8px] text-black w-full' name="body" onChange={onHandleChange}></textarea>
-          </div>
-          <div className='text-2xl mt-[7px]'>
-            <label>Author: </label>
-            <input type="text" className='bg-yellow-200 rounded-[8px] text-black' name="author" onChange={onHandleChange}></input>
-          </div>
-          <div className='flex justify-center mt-[0.5cm]'>
-            <button type="submit" disabled={loading}>
-              {loading ? "Creating..." : "Create"}
-            </button>
-          </div>
-        </form>
+      <div className='h-screen flex justify-center px-4'>
+        <div className='bg-gradient-to-r from-blue-600 via-blue-500 to-black h-fit mt-[2cm] p-[6px] rounded-xl'>
+          <form className='bg-neutral-900 h-fit p-4 rounded-xl' onSubmit={onHandleSubmit}>
+            <div className='text-2xl'>
+              <label>Title: </label>
+              <input type="text" className='bg-black rounded-[8px] text-white w-full pl-4' name="title" onChange={onHandleChange} required></input>
+            </div>
+            <div className='text-2xl  mt-[7px]'>
+              <h3>Body: </h3>
+              <textarea type="text" className='bg-black rounded-[8px] text-white w-full pl-4' name="body" onChange={onHandleChange} required></textarea>
+            </div>
+            <div className='text-2xl mt-[7px]'>
+              <label>Author: </label>
+              <input type="text" className='bg-black rounded-[8px] text-white w-full pl-4' name="author" onChange={onHandleChange} required></input>
+            </div>
+            <div className='flex justify-center mt-[0.5cm]'>
+              <button style={{ backgroundColor: 'blue' }} type="submit" disabled={loading}>
+                {loading ? "Creating..." : "Create"}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   )

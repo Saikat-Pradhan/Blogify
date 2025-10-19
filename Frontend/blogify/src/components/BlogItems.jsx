@@ -10,9 +10,9 @@ export default function BlogItems() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-        setAllBlogs(blogs);
-        setLoading(false);
-    },500);
+      setAllBlogs(blogs);
+      setLoading(false);
+    }, 500);
 
     return () => clearTimeout(timer);
 
@@ -25,14 +25,16 @@ export default function BlogItems() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
       {allBlogs?.map((item) => (
-        <div
-          key={item._id}
-          className="border rounded-lg p-4 max-w-sm w-full hover:bg-neutral-900 hover:border-[3px] hover:border-blue-300 cursor-pointer"
-          onClick={() => navigate(`/blog/${item._id}`)}
-        >
-          <div>
-            <h2 className="text-2xl text-center font-semibold text-blue-400">{item.title}</h2>
-            <p className="mt-2 text-center line-clamp-4">{item.body}</p>
+        <div className='rounded-lg bg-gradient-to-r from-blue-600 via-blue-500 to-black p-[6px] max-w-sm w-full cursor-pointer'>
+          <div
+            key={item._id}
+            className="rounded-lg bg-neutral-900 p-4 max-w-sm w-full cursor-pointer"
+            onClick={() => navigate(`/blog/${item._id}`)}
+          >
+            <div>
+              <h2 className="text-2xl text-center font-semibold text-blue-600">{item.title}</h2>
+              <p className="mt-2 text-white text-center line-clamp-4">{item.body}</p>
+            </div>
           </div>
         </div>
       ))}
