@@ -1,1 +1,12 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+[data-theme="dark"] {
+  background-color: #111;
+  color: #eee;
+}
+
+[data-theme="light"] {
+  background-color: #fff;
+  color: #111;
+}

@@ -31,22 +31,22 @@ const AddBlog = () => {
 
   return (
     <>
-      <div className='h-screen flex justify-center px-4'>
+      <div className='h-screen bg-amber-200 dark:bg-neutral-800 flex justify-center px-4'>
         <div className='bg-gradient-to-r from-blue-600 via-blue-500 to-black h-fit mt-[2cm] p-[6px] rounded-xl'>
-          <form className='bg-neutral-900 h-fit p-4 rounded-xl' onSubmit={onHandleSubmit}>
+          <form className='bg-green-200 text-black dark:bg-neutral-900 dark:text-white h-fit p-4 rounded-xl' onSubmit={onHandleSubmit}>
             <div className='text-2xl'>
               <label>Title: </label>
-              <input type="text" className='bg-black rounded-[8px] text-white w-full pl-4' name="title" onChange={onHandleChange} required></input>
+              <input type="text" className='bg-white rounded-[8px] text-black w-full pl-4' name="title" onChange={onHandleChange} placeholder='Enter title' required></input>
             </div>
             <div className='text-2xl  mt-[7px]'>
               <h3>Body: </h3>
-              <textarea type="text" className='bg-black rounded-[8px] text-white w-full pl-4' name="body" onChange={onHandleChange} required></textarea>
+              <textarea type="text" className='bg-white rounded-[8px] text-black w-full pl-4' name="body" onChange={onHandleChange} placeholder='Write your blog content here...' required></textarea>
             </div>
             <div className='text-2xl mt-[7px]'>
               <label>Author: </label>
-              <input type="text" className='bg-black rounded-[8px] text-white w-full pl-4' name="author" onChange={onHandleChange} required></input>
+              <input type="text" className='bg-white rounded-[8px] text-black w-full pl-4' name="author" onChange={onHandleChange} placeholder='Enter author name' required></input>
             </div>
-            <div className='flex justify-center mt-[0.5cm]'>
+            <div className='flex justify-center mt-[0.5cm] text-white'>
               <button style={{ backgroundColor: 'blue' }} type="submit" disabled={loading}>
                 {loading ? "Creating..." : "Create"}
               </button>
