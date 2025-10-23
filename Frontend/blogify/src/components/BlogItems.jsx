@@ -23,7 +23,7 @@ export default function BlogItems() {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 pt-2">
+    <div className="grid grid-cols-1 overflow-y-auto h-full sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
       {allBlogs?.map((item) => (
         <div key={item._id} className='rounded-lg bg-gradient-to-r from-blue-600 via-blue-500 to-black p-[6px] max-w-sm w-full cursor-pointer'>
           <div
