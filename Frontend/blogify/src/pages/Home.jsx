@@ -10,7 +10,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className='flex justify-center items-center pt-3 lg:pt-0 h-screen bg-amber-200 overflow-scroll dark:bg-neutral-800'>
+    <div className='flex justify-center items-center lg:pt-0 h-screen bg-amber-200 overflow-scroll dark:bg-neutral-800'>
       <BlogItems />
     </div>
   );
