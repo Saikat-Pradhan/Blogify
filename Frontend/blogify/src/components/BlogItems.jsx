@@ -23,11 +23,11 @@ export default function BlogItems() {
   }
 
   return (
-    <div className="grid grid-cols-1 overflow-y-auto h-full sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+    <div className="grid grid-cols-1 overflow-y-auto h-fit sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
       {allBlogs?.map((item) => (
-        <div key={item._id} className='rounded-lg bg-gradient-to-r from-blue-600 via-blue-500 to-black p-[6px] max-w-sm w-full cursor-pointer'>
+        <div key={item._id} className='md:h-full lg:h-full rounded-lg bg-gradient-to-r from-blue-600 via-blue-500 to-black p-[6px] max-w-sm w-full cursor-pointer'>
           <div
-            className="rounded-lg bg-green-200 text-black dark:bg-neutral-900 dark:text-white p-4 max-w-sm w-full cursor-pointer"
+            className="rounded-lg bg-green-200 text-black dark:bg-neutral-900 dark:text-white p-4 max-w-sm w-full md:h-full lg:h-full cursor-pointer"
             onClick={() => navigate(`/blog/${item._id}`)}
           >
             <div>
