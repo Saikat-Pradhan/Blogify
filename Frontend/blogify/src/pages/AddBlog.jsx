@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createNewBlog, speaker } from '../services/blogService'
+import {toast} from "react-toastify"
 
 const AddBlog = () => {
 
@@ -21,9 +22,11 @@ const AddBlog = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      await createNewBlog(blogData).then(() => navigate("/"))
+      await createNewBlog(blogData)
+      toast.success("Blog Added Successfully");
+      setTimeout(() => navigate("/"), 5000);
     } catch (error) {
-      console.log("Failed to create new blog")
+      toast.error("Failed to create new blog")
     } finally {
       setLoading(false)
     }
